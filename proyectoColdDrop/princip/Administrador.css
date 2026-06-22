@@ -1,0 +1,201 @@
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+
+        .pantalla-principal {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+       
+        .barra-superior {
+            background-color: #333;
+            color: white;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+
+        .barra-superior h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+
+        .seccion-centro {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            flex-grow: 1;
+            box-sizing: border-box;
+            padding: 40px 10px;
+        }
+
+
+       
+        .col-perfil {
+            flex: 0 0 28%;
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
+
+
+        .titulote {
+            font-size: 45px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1;
+        }
+
+
+        .foto-admin {
+            width: 100%;
+            max-width: 290px;
+            height: auto;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+        }
+
+
+        .lista-datos-santi {
+            list-style: none;
+            padding: 0;
+        }
+
+
+        .lista-datos-santi li {
+            font-size: 13px;
+            margin-bottom: 14px;
+            color: #444;
+        }
+
+
+       
+        .col-graficos {
+            flex: 0 0 44%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+
+       
+        .col-menu-links {
+            flex: 0 0 28%;
+            border-left: 2px solid #f4f4f4;
+            padding-left: 35px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .link-titulo-naranja {
+            color: #e67e22;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+
+        .link-subtitulo {
+            color: #333;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+
+        .grupo-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .grupo-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            transition: 0.2s;
+        }
+
+
+        .grupo-links a:hover {
+            color: #2563eb;
+            padding-left: 5px;
+        }
+
+
+       
+        .barra-inferior {
+            background-color: #333;
+            color: white;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+    .seccion-centro {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+
+    .col-perfil, .col-graficos, .col-menu-links {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+        border-left: none;
+        text-align: center;
+    }
+
+
+    .foto-admin {
+        margin: 0 auto 20px auto;
+        max-width: 250px;
+    }
+
+
+    .lista-datos-santi {
+        display: inline-block;
+        text-align: left;
+    }
+
+
+    .col-graficos img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .barra-superior, .barra-inferior {
+        height: auto;
+        padding: 15px;
+    }
+}

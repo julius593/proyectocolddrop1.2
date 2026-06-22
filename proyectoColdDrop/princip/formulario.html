@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gestión de Productos</title>
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+body{
+    background:black;
+    color:white;
+    font-family:Arial;
+    padding:40px;
+}
+
+
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+button{
+    background:#2f63ff;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    cursor:pointer;
+}
+
+
+
+.formulario{
+    background:#111;
+    padding:20px;
+    margin-bottom:30px;
+    display:none;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+    background:#1b1b1b;
+    border:none;
+    color:white;
+}
+
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#0b0b0b;
+}
+
+th{
+    color:#2f63ff;
+    text-align:left;
+    padding:20px;
+    border-bottom:1px solid #2f63ff;
+}
+
+td{
+    padding:20px;
+    border-bottom:1px solid #1d1d1d;
+    color:#bdbdbd;
+}
+
+.nombre,
+.precio,
+.stock{
+    color:white;
+    font-weight:bold;
+}
+
+
+
+i{
+    margin-right:15px;
+    cursor:pointer;
+}
+
+.fa-pen{
+    color:#2f63ff;
+}
+
+.fa-trash{
+    color:gray;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="top">
+
+    <h1>GESTIÓN DE PRODUCTOS</h1>
+
+    <button onclick="mostrarFormulario()">
+        <i class="fa-solid fa-plus"></i>
+        NUEVO PRODUCTO
+    </button>
+
+</div>
+
+
+
+<div class="formulario" id="formulario">
+
+    <input type="text" id="codigo" placeholder="Código">
+
+    <input type="text" id="nombre" placeholder="Nombre">
+
+    <input type="text" id="descripcion" placeholder="Descripción">
+
+    <input type="number" id="precio" placeholder="Precio">
+
+    <input type="number" id="costo" placeholder="Costo">
+
+    <input type="number" id="stock" placeholder="Stock">
+
+    <button onclick="agregarProducto()">
+        GUARDAR PRODUCTO
+    </button>
+
+</div>
+
+
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>CÓDIGO</th>
+            <th>NOMBRE</th>
+            <th>DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>COSTO</th>
+            <th>STOCK</th>
+            <th>ACCIONES</th>
+        </tr>
+
+    </thead>
+
+    <tbody id="tablaProductos">
+
+    </tbody>
+
+</table>
+
+<script>
+
+
+
+function mostrarFormulario(){
+
+    let formulario = document.getElementById("formulario");
+
+    formulario.style.display = "block";
+}
+
+
+
+function agregarProducto(){
+
+    let codigo = document.getElementById("codigo").value;
+    let nombre = document.getElementById("nombre").value;
+    let descripcion = document.getElementById("descripcion").value;
+    let precio = document.getElementById("precio").value;
+    let costo = document.getElementById("costo").value;
+    let stock = document.getElementById("stock").value;
+
+    let tabla = document.getElementById("tablaProductos");
+
+    let fila = document.createElement("tr");
+
+    fila.innerHTML = `
+
+        <td>${codigo}</td>
+
+        <td class="nombre">${nombre}</td>
+
+        <td>${descripcion}</td>
+
+        <td class="precio">$${precio}</td>
+
+        <td>$${costo}</td>
+
+        <td class="stock">${stock}</td>
+
+        <td>
+            <i class="fa-solid fa-pen" onclick="editarProducto(this)"></i>
+
+            <i class="fa-solid fa-trash" onclick="eliminarProducto(this)"></i>
+        </td>
+
+    `;
+
+    tabla.appendChild(fila);
+
+
+
+    document.getElementById("codigo").value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("descripcion").value = "";
+    document.getElementById("precio").value = "";
+    document.getElementById("costo").value = "";
+    document.getElementById("stock").value = "";
+
+
+
+    document.getElementById("formulario").style.display = "none";
+}
+
+
+
+function eliminarProducto(icono){
+
+    let fila = icono.parentElement.parentElement;
+
+    fila.remove();
+}
+
+
+
+function editarProducto(icono){
+
+    let fila = icono.parentElement.parentElement;
+
+    let celdas = fila.getElementsByTagName("td");
+
+    let nuevoCodigo = prompt("Editar código", celdas[0].innerText);
+    let nuevoNombre = prompt("Editar nombre", celdas[1].innerText);
+    let nuevaDescripcion = prompt("Editar descripción", celdas[2].innerText);
+    let nuevoPrecio = prompt("Editar precio", celdas[3].innerText.replace("$",""));
+    let nuevoCosto = prompt("Editar costo", celdas[4].innerText.replace("$",""));
+    let nuevoStock = prompt("Editar stock", celdas[5].innerText);
+
+    celdas[0].innerText = nuevoCodigo;
+    celdas[1].innerText = nuevoNombre;
+    celdas[2].innerText = nuevaDescripcion;
+    celdas[3].innerText = "$" + nuevoPrecio;
+    celdas[4].innerText = "$" + nuevoCosto;
+    celdas[5].innerText = nuevoStock;
+}
+
+</script>
+
+</body>
+</html>
