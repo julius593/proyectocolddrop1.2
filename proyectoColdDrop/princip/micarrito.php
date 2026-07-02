@@ -301,7 +301,7 @@ if($total==null){
                         echo "<td>".$fila["Codigo"]."</td>";
                         echo "<td>".$fila["Nombre"]."</td>";
                         echo "<td>".$fila["Talla"]."</td>";
-                        echo "<td>$".number_format($fila["Costo"], 2)."</td>";
+                        echo "<td>Bs".number_format($fila["Costo"], 2)."</td>";
                         echo "<td>
                                 <a href='crearproducto.php?codigo=".$fila["Codigo"]."' class='btn-mostrar'>Mostrar</a>
                             </td>";
