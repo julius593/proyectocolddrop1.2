@@ -99,6 +99,8 @@ header{
 #imagenesmuestra{
     display: flex;
     justify-content: center;
+    border: red;
+    
 }
 #tres{
     grid-area: tres;
@@ -180,6 +182,8 @@ footer{
 }
 .imagenmuestra:hover {
   transform: scale(1.1);
+  border: red;
+  
 }
 #historia {
   display: grid;
