@@ -259,7 +259,7 @@ if($total==null){
                             echo "<td>".htmlspecialchars($item["PRODUCTOS_Codigo"])."</td>";
                             echo "<td>".htmlspecialchars($item["Nombre"])."</td>";
                             echo "<td>".htmlspecialchars($item["Talla"])."</td>";
-                            echo "<td>$".number_format($item["Costo"], 2)."</td>";
+                            echo "<td>Bs".number_format($item["Costo"], 2)."</td>";
                             echo "<td>".htmlspecialchars($item["cantidad"])."</td>";
                             echo "<td>$".number_format($item["costoTotal"], 2)."</td>";
                             echo "<td>";
