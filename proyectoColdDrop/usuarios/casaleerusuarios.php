@@ -14,4 +14,3 @@ if($resultado->num_rows>0){
 }
 
 ?>
-

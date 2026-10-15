@@ -57,3 +57,20 @@ $resultado = $conexion->query($sql);
     <footer>
         &copy; <?php echo date("Y"); ?> - Sistema de Gestión de Productos 💜
     </footer>
+
+
+    
+                  <a href="leerusuarios.php" class="btn-admin secundario">← Volver a Lista de Usuarios</a>
+            </div>
+        <?php else: ?>
+            <div class="admin-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <p>No se encontró el usuario solicitado.</p>
+                <a href="leerusuarios.php" class="btn-admin secundario">← Volver a Lista de Usuarios</a>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Incluimos el pie de página -->
+    <?php include '../princip/footer.php'; ?>
+</body>
+</html>

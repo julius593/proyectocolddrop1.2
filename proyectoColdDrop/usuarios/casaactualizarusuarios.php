@@ -12,3 +12,4 @@ if($conexion->query($sql)=== TRUE){
     echo "El usuario se proporciono exitosamente:)";
 }
 ?>
+
